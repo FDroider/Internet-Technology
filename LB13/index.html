@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агентство рандомного найму «Успішний Успіх»</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">🔥 Успішний Успіх</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#heroCarousel">Вакансії Шредінгера</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bosses">Боси качалки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert disclaimer shadow-sm" role="alert">
+            <p class="mb-0">Відгук на вакансію може призвести до: ігнорування, тестового завдання або екзистенційної кризи. Якщо вам відповіли — це або помилка, або ви самі це підлаштували.</p>
+        </div>
+
+        <div id="heroCarousel" class="carousel slide mt-4 shadow" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.ytimg.com/vi/0oBx7Jg4m-o/maxresdefault.jpg" class="d-block w-100" alt="Синдром самозванця">
+                    <div class="carousel-caption d-md-block">
+                        <h2 class="display-4 fw-bold">Шукаємо фахівця з синдромом самозванця</h2>
+                        <p class="h4">Платимо менше, вимагаємо більше!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://animals.pibig.info/uploads/posts/2023-04/1681335005_animals-pibig-info-p-kot-direktor-zhivotnie-pinterest-1.jpg" class="d-block w-100" alt="Василь рекрутер">
+                    <div class="carousel-caption d-md-block">
+                        <h2 class="display-4 fw-bold">Наш головний рекрутер Василь</h2>
+                        <p class="h4">Якщо ви йому не сподобаєтесь — шансів немає.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://advice.telegazeta.com.ua/wp-content/uploads/2024/03/shho-take-bagatozadachnist-ta-chy-praczyuye-vona.jpg" class="d-block w-100" alt="Ідеальний кандидат">
+                    <div class="carousel-caption d-md-block">
+                        <h2 class="display-4 fw-bold">Ідеальний кандидат має знати все.</h2>
+                        <p class="h4">Бажано ще більше.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <section id="bosses" class="container py-5">
+            <h2 class="text-center mb-5 text-uppercase">Боси качалки</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-10 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8" class="card-img-top" alt="Топ-менеджер">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-danger">Топ-менеджер з професійних дзвінків</h5>
+                            <p class="card-text">Наш топ-менеджер гавкає під час дзвінків, бо “люди люблять песиків”. Конверсія не росте, але настрій — так. Гав-гав.</p>
+                            <a href="#" class="btn btn-brand">Приєднатись до зграї</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Paper_shredder_news.jpg" class="card-img-top" alt="Шредер Олексій">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-danger">Шредер Олексій</h5>
+                            <p class="card-text">HR, який не витрачає ваш час на розгляд резюме. Він просто одразу його видаляє.</p>
+                            <a href="#" class="btn btn-brand">Спробувати удачу</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm text-center">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" class="card-img-top" alt="Тьотя Срака">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-danger">Тьотя Срака</h5>
+                            <p class="card-text">Приймає на роботу по кавовій гущі та знаку зодіаку. Якщо ви не ретроградний Меркурій у фазі оферу — шансів мало.</p>
+                            <a href="#" class="btn btn-brand">Дізнатись свою долю</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="container py-5">
+            <h2 class="text-center mb-4">FAQ (Frequently Avoided Questions)</h2>
+            <div class="accordion shadow-sm" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                            Чому мені відмовили після 5 етапів співбесід?
+                        </button>
+                    </h2>
+                    <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            З’явився “ідеальний кандидат”. Правда його ніхто не бачив, але він є.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                            Що робити, якщо в резюме мало слова “DevOps”?
+                        </button>
+                    </h2>
+                    <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Додайте його ще раз. І ще. І ще 500 разів — AI любить наполегливих.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                            Чи реальні ваші вакансії?
+                        </button>
+                    </h2>
+                    <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Вони реальні. Просто не факт, що для вас. І не факт, що взагалі.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2026 Агентство рандомного найму «Успішний Успіх». Всі права захищені.</p>
+            <p class="small text-muted">Ваші вихідні офіційно скасовані.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

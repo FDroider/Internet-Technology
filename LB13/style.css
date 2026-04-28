@@ -1,0 +1,50 @@
+body { 
+    background-color: #fff5f2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+.navbar {
+    background: linear-gradient(90deg, #d32f2f, #ff6f00); 
+}
+.navbar-brand, .nav-link { 
+    color: white; 
+    font-weight: bold; 
+}
+.btn-brand { 
+    background-color: #ff6f00; 
+    color: white; 
+    border: none; 
+}
+.btn-brand:hover { 
+    background-color: #d32f2f; 
+    color: white; 
+}
+.disclaimer { 
+    border: 5px solid #d32f2f; 
+    background-color: #ffebee; 
+}
+.carousel-item img { 
+    height: 550px; 
+    object-fit: cover; 
+    filter: brightness(40%); 
+}
+.card { 
+    border-top: 4px solid #ff6f00; 
+    transition: transform 0.3s; 
+}
+.card img {
+    height: 400px; 
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+}
+.accordion-button:not(.collapsed) { 
+    background-color: #fff3e0; 
+    color: #d32f2f; 
+}
+footer { 
+    background-color: #263238; 
+    color: white; 
+    padding: 30px 0; 
+}
