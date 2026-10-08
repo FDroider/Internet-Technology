@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const answer = document.createElement('div');
     answer.className = 'ball-answer';
-    answer.textContent = 'Yes'; // Початковий стан як на фото
 
     ballSphere.appendChild(nebula);
     ballContainer.append(ballGlow, ballSphere, answer);
@@ -86,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') askMagicBall();
     });
+    askMagicBall();
 })
 
 function validateInput(text) {
