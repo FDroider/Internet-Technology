@@ -1,0 +1,120 @@
+.game-card {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    max-width: 620px;
+    border-radius: 16px;
+    border: 2px solid #fadcd5;
+    box-shadow: 0 10px 25px rgba(234, 67, 38, 0.08);
+    padding: 32px 26px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #7c625c;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.battle-arena {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.player-card {
+    flex: 1;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 12px;
+    transition: all 0.25s ease;
+}
+
+.player-card.active-winner {
+    border-color: #c92a2a;
+    background-color: #fff0ed;
+}
+
+.player-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4a3430;
+    margin-bottom: 10px;
+}
+
+.number-box {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ea4326;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1.5px solid #f6ded8;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8c6a64;
+}
+
+.vs-badge {
+    font-size: 15px;
+    font-weight: 800;
+    color: #d99f92;
+}
+
+.round-message {
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 24px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: #b33924;
+}
+
+.btn {
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #ffac98;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+}
+
+.btn-primary {
+    background-color: #ea4326;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #d33519;
+}
+
+.btn-restart {
+    display: none;
+    background-color: #2b8a3e;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.btn-reset {
+    background-color: #ea4326;
+    color: #ffffff;
+    margin-top: 10px;
+}

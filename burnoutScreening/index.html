@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра «Більше число»</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="game-card">
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Змінити тему">&#9790;</button>
+
+        <h1>Система подачі резюме</h1>
+        <p class="subtitle">Ваш стек проти алгоритмів автоматичного скринінгу. 3 успішні етапи — і офер ваш!</p>
+
+        <div class="battle-arena">
+            <div class="player-card" id="userCard">
+                <div class="player-name" id="userNameLabel">Кандидат</div>
+                <div class="number-box" id="userNumber">?</div>
+                <div class="score">Пройдено етапів: <span id="userScore">0</span> / 3</div>
+            </div>
+
+            <div class="vs-badge">VS</div>
+
+            <div class="player-card" id="compCard">
+                <div class="player-name">ШІ-Рекрутер</div>
+                <div class="number-box" id="compNumber">?</div>
+                <div class="score">Відхилено етапів: <span id="compScore">0</span> / 3</div>
+            </div>
+        </div>
+
+        <div class="round-message" id="statusMessage">Очікування завантаження резюме...</div>
+
+        <button class="btn" id="generateBtn">Подати знову резюме</button>
+        <button class="btn btn-restart" id="restartBtn">Податись на іншу вакансію</button>
+        <button class="btn btn-reset" id="resetBtn">Оновити резюме (новий кандидат)</button>
+    </div>
+
+    <div class="modal-overlay" id="nameModal">
+        <div class="modal-box">
+            <h2>Анкета кандидата</h2>
+            <p>Введіть ваше ім’я або нікнейм для реєстрації заявки:</p>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Ім'я кандидата (наприклад, Олексій)" maxlength="20">
+                <div class="error-message" id="nameError"></div>
+            </div>
+            <button class="btn" id="startBtn">Надіслати заявку на розгляд</button>
+        </div>
+    </div>
+</body>
+</html>
