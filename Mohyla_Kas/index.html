@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Могила Кас Edition</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header_inner">
+      <div class="logo">
+        <span class="logo_icon">🎰</span>
+        <h1 class="logo_title">Могила Кас</h1>
+      </div>
+
+      <div class="header_actions">
+        <button id="change-name-btn" class="btn btn-secondary" type="button" title="Змінити ім'я та скинути гру">
+          👤 Змінити ім'я
+        </button>
+        <button id="theme-toggle-btn" class="btn btn-icon" type="button" aria-label="Перемкнути тему">
+          <span id="theme-icon">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="status-bar" aria-live="polite">
+      <p id="round-indicator" class="status-bar_round">Спроба 0 з 3</p>
+      <div id="result-banner" class="status-bar_result hidden"></div>
+    </section>
+
+    <section class="arena">
+      <div class="player-column">
+        <h2 id="user-name-display" class="player-column_name">Студент</h2>
+        <div class="score-badge">
+          <span class="score-badge_label">Очки:</span>
+          <span id="user-score" class="score-badge_value">0</span>
+        </div>
+        <div id="user-card-slot" class="card-slot">
+          <div class="card card-placeholder">
+            <span class="card_placeholder-icon">🃏</span>
+            <p class="card_placeholder-text">Очікування депу...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-column">
+        <button id="gamble-btn" class="btn btn-gamble" type="button">
+          🎲 Gambling
+        </button>
+        <button id="play-again-btn" class="btn btn-outline" type="button">
+          🔄 Зіграти ще раз
+        </button>
+      </div>
+
+      <div class="player-column">
+        <h2 class="player-column_name">Викладач</h2>
+        <div class="score-badge score-badge-computer">
+          <span class="score-badge_label">Очки:</span>
+          <span id="computer-score" class="score-badge_value">0</span>
+        </div>
+        <div id="computer-card-slot" class="card-slot">
+          <div class="card card-placeholder">
+            <span class="card_placeholder-icon">🤖</span>
+            <p class="card_placeholder-text">Очікування депу...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="name-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal_header">
+        <span class="modal_badge">ВХІД</span>
+        <h2 id="modal-title" class="modal_title">Представтесь перед додепом</h2>
+        <p class="modal_subtitle">Введіть ваше ім'я або позивний:</p>
+      </div>
+
+      <form id="name-form" class="modal_form" novalidate>
+        <div class="form-group">
+          <input type="text" id="name-input" class="form-group_input" placeholder="Наприклад, Гієна..." maxlength="20"
+            autocomplete="off" required/>
+          <p id="name-error" class="form-group_error hidden"></p>
+        </div>
+
+        <div class="modal_actions">
+          <button type="submit" class="btn btn-gamble btn-full">
+            🚀 Вперед додепати
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+.card-slot {
+  width: 100%;
+  max-width: 270px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  min-height: 350px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  animation: dealCard 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card_bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 20, 0.78) 0%,
+    rgba(10, 12, 20, 0.35) 45%,
+    rgba(10, 12, 20, 0.45) 55%,
+    rgba(10, 12, 20, 0.85) 100%
+  );
+  z-index: 2;
+}
+
+.card_bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.card_emoji {
+  position: relative;
+  z-index: 2;
+  font-size: 5.5rem;
+  user-select: none;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+  animation: popIn 0.3s ease-out;
+}
+
+.card-placeholder {
+  border-style: dashed;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.card_placeholder-icon {
+  font-size: 3.5rem;
+  opacity: 0.6;
+}
+
+.card_corner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.card_corner-bottom {
+  align-items: flex-end;
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+.card_rank {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--accent-gamble);
+}
+
+.card_points {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.card_body {
+  text-align: center;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card_title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+@keyframes dealCard {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) rotateY(25deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateY(0) scale(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

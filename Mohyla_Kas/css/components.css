@@ -1,0 +1,103 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-gamble {
+  background-color: var(--accent-gamble);
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 20px var(--accent-gamble-glow);
+}
+
+.btn-gamble:hover:not(:disabled) {
+  background-color: var(--accent-gamble-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-gamble);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  width: 100%;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-secondary);
+}
+
+.btn-icon {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  padding: 0.65rem 0.85rem;
+  font-size: 1.15rem;
+}
+
+.btn-icon:hover {
+  background-color: var(--bg-secondary);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.score-badge {
+  background-color: var(--badge-user);
+  color: #ffffff;
+  padding: 0.55rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  min-width: 170px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.score-badge-computer {
+  background-color: var(--badge-computer);
+}
+
+.status-bar_result {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--accent-gamble);
+  box-shadow: var(--shadow-lg);
+  animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
