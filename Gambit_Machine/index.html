@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гамбіт машина</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/script.js" defer></script>
+</head>
+<body data-theme="dark">
+  <main class="casino-container">
+    <button id="theme-toggle" class="btn-theme-toggle" aria-label="Змінити тему" title="Змінити тему">☀️</button>
+
+    <header class="casino-header">
+      <h1 id="user-display" class="user-title">User</h1>
+      <p id="attempts-display" class="attempts-text">Спроба 0 з 3</p>
+    </header>
+
+    <section class="bet-section">
+      <label for="bet-input" class="bet-label">Ваша ставка ($):</label>
+      <div class="bet-input-wrapper">
+        <input type="number" id="bet-input" class="bet-input" value="100" min="1" step="10">
+      </div>
+      <div id="bet-feedback" class="bet-feedback" aria-live="polite"></div>
+    </section>
+
+    <section class="controls-section">
+      <button id="gambling-btn" class="btn btn-gambling">Gambling</button>
+      <button id="restart-btn" class="btn btn-restart hidden">Спробувати ще раз</button>
+    </section>
+
+    <section class="slot-machine-wrapper">
+      <div class="slot-machine" id="slot-grid">
+        <div class="reel-column" data-col="0">
+          <div class="slot-cell" data-row="0"></div>
+          <div class="slot-cell" data-row="1"></div>
+          <div class="slot-cell" data-row="2"></div>
+        </div>
+        <div class="reel-column" data-col="1">
+          <div class="slot-cell" data-row="0"></div>
+          <div class="slot-cell" data-row="1"></div>
+          <div class="slot-cell" data-row="2"></div>
+        </div>
+        <div class="reel-column" data-col="2">
+          <div class="slot-cell" data-row="0"></div>
+          <div class="slot-cell" data-row="1"></div>
+          <div class="slot-cell" data-row="2"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="game-status" class="game-status" aria-live="polite"></div>
+
+    <button type="button" id="change-name-btn" class="btn btn-change-name">Змінити ім’я</button>
+  </main>
+
+  <div id="modal-age" class="modal-backdrop active">
+    <div class="modal-card">
+      <h2 class="modal-title">🔞 Віковий контроль</h2>
+      <p class="modal-text">Чи вам вже виповнилося 18 років?</p>
+      <div class="modal-buttons">
+        <button type="button" id="age-yes-btn-1" class="btn btn-modal">Так</button>
+        <button type="button" id="age-yes-btn-2" class="btn btn-modal">Так</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-name" class="modal-backdrop">
+    <div class="modal-card">
+      <h2 class="modal-title">Реєстрація гравця</h2>
+      <p class="modal-text">Введіть ваше ім’я для початку гри:</p>
+      <form id="name-form" class="modal-form" novalidate>
+        <div class="input-group">
+          <input type="text" id="player-name-input" class="modal-input" placeholder="Ваше ім’я" maxlength="20">
+          <span id="name-error" class="error-msg"></span>
+        </div>
+        <button type="submit" class="btn btn-modal">Почати гру</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-troll" class="modal-backdrop">
+    <div class="modal-card troll-card">
+      <button type="button" id="troll-close-btn" class="modal-close" aria-label="Закрити">&times;</button>
+      <div class="troll-badge">🎉 НЕЙМОВІРНИЙ БОНУС!</div>
+      <div class="troll-text-container">
+        <span class="troll-amount"></span>
+      </div>
+      <p class="troll-hint">(Наведіть курсор або торкніться, щоб забрати виграш)</p>
+    </div>
+  </div>
+</body>
+</html>
