@@ -9,6 +9,7 @@ body {
   background: var(--bg-gradient);
   color: var(--text-main);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,8 +24,31 @@ body {
   font-family: inherit;
   font-weight: 700;
   border: none;
-  cursor: pointer;
   border-radius: 8px;
-  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
   user-select: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:disabled,
+input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.bet-input,
+.modal-input {
+  font-family: inherit;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.bet-input:focus,
+.modal-input:focus {
+  border-color: var(--accent-green);
 }

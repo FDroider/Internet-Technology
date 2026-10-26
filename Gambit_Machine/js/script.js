@@ -1,7 +1,8 @@
 import { DOM } from './dom.js';
 import { initTheme } from './theme.js';
 import { initModals, openNameModal } from './modals.js';
-import { initGame, setPlayerName, resetGame } from './game.js';
+import { initGame, setPlayerName } from './game.js';
+import { state } from './gameState.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -12,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   DOM.changeNameBtn.addEventListener('click', () => {
-    resetGame();
+    if (state.isSpinning) return;
+    DOM.inputName.value = '';
     openNameModal();
   });
 });

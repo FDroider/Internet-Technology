@@ -1,60 +1,53 @@
 import { DOM } from './dom.js';
 import { state } from './gameState.js';
 
-export function openModal(modalElement) {
-  if (modalElement) modalElement.classList.add('active');
-}
-
-export function closeModal(modalElement) {
-  if (modalElement) modalElement.classList.remove('active');
-}
-
-export function openNameModal() {
-  openModal(DOM.modalName);
-  setTimeout(() => DOM.inputName.focus(), 50);
-}
-
-export function triggerRandomTrollPopup() {
-  if (state.trollShown) return;
-
-  state.trollShown = true;
-  setTimeout(() => {
-    openModal(DOM.modalTroll);
-  }, 350);
-}
-
 export function initModals(onNameSubmitted) {
-  const handleAgeConfirm = () => {
-    closeModal(DOM.modalAge);
+  syncInertState();
+
+  function confirmAge () {
+    toggleModal(DOM.modalAge, false);
     openNameModal();
   };
 
-  DOM.btnAge1.addEventListener('click', handleAgeConfirm);
-  DOM.btnAge2.addEventListener('click', handleAgeConfirm);
+  DOM.btnAge1.addEventListener('click', confirmAge);
+  DOM.btnAge2.addEventListener('click', confirmAge);
+  DOM.btnTrollClose.addEventListener('click', () => toggleModal(DOM.modalTroll, false));
+  DOM.inputName.addEventListener('input', () => (DOM.nameError.textContent = ''));
 
   DOM.formName.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = DOM.inputName.value.trim();
 
-    if (!name) {
-      DOM.nameError.textContent = "Будь ласка, введіть ім’я!";
-      return;
-    }
-
     if (name.length < 2) {
-      DOM.nameError.textContent = "Ім’я має містити щонайменше 2 символи!";
+      DOM.nameError.textContent = name ? 'Ім’я має містити щонайменше 2 символи!' : 'Будь ласка, введіть ім’я!';
       return;
     }
 
-    DOM.nameError.textContent = "";
-    closeModal(DOM.modalName);
-
-    if (typeof onNameSubmitted === 'function') {
-      onNameSubmitted(name);
-    }
+    toggleModal(DOM.modalName, false);
+    onNameSubmitted(name);
+    DOM.gamblingBtn.focus();
   });
+}
 
-  DOM.btnTrollClose.addEventListener('click', () => {
-    closeModal(DOM.modalTroll);
-  });
+function syncInertState() {
+  const isBlocked = DOM.modalAge.classList.contains('active') || DOM.modalName.classList.contains('active');
+  DOM.mainContainer.inert = isBlocked;
+  DOM.mainContainer.setAttribute('aria-hidden', String(isBlocked));
+}
+
+export function toggleModal(modal, isOpen) {
+  modal?.classList.toggle('active', isOpen);
+  syncInertState();
+}
+
+export function openNameModal() {
+  DOM.nameError.textContent = '';
+  toggleModal(DOM.modalName, true);
+  setTimeout(() => DOM.inputName.focus(), 50);
+}
+
+export function triggerRandomTrollPopup() {
+  if (state.trollShown) return;
+  state.trollShown = true;
+  setTimeout(() => toggleModal(DOM.modalTroll, true), 350);
 }

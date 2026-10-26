@@ -18,5 +18,5 @@ export function initTheme() {
 
 function applyTheme(theme) {
     DOM.html.setAttribute('data-theme', theme);
-    DOM.themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-  }
+    DOM.themeToggle.textContent = theme === 'dark' ? '♔' : '♚';
+}

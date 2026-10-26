@@ -30,7 +30,7 @@
   text-align: center;
   position: relative;
   transform: translateY(-20px);
-  transition: transform 0.25s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.25s ease, background-color 0.3s ease;
 }
 
 .modal-backdrop.active .modal-card {
@@ -44,7 +44,6 @@
 }
 
 .modal-text {
-  font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
@@ -52,7 +51,6 @@
 .modal-buttons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
 }
 
 .btn-modal {
@@ -67,54 +65,54 @@
   background-color: var(--btn-blue-hover);
 }
 
-.modal-form {
+.modal-form,
+.input-group {
   display: flex;
   flex-direction: column;
+}
+
+.modal-form {
   gap: 1rem;
 }
 
 .input-group {
-  display: flex;
-  flex-direction: column;
   text-align: left;
 }
 
 .modal-input {
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: var(--input-bg);
-  color: var(--text-main);
-  border: 2px solid var(--input-border);
-  border-radius: 8px;
-  outline: none;
 }
 
-.modal-input:focus {
-  border-color: var(--btn-blue);
+#modal-troll {
+  inset: auto auto 1.25rem 1.25rem;
+  background: transparent;
+  padding: 0;
+  pointer-events: none;
 }
 
-.error-msg {
-  color: var(--danger-color);
-  font-size: 0.85rem;
-  margin-top: 0.35rem;
-  min-height: 1.1rem;
-}
-
-/* Специфіка тролінг-вікна (завжди світлий фон) */
 .troll-card {
   background: linear-gradient(135deg, #fef08a 0%, #fed7aa 100%);
   color: #1e293b;
   border: 3px dashed #ea580c;
+  max-width: 290px;
+  padding: 1.25rem 1.25rem 1rem;
   cursor: pointer;
+  transform: translateX(-120%);
+}
+
+#modal-troll.active .troll-card {
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 14px;
+  top: 8px;
+  right: 12px;
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 1;
   cursor: pointer;
   color: #334155;
@@ -124,17 +122,16 @@
   font-size: 0.85rem;
   font-weight: 900;
   color: #c2410c;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 }
 
 .troll-text-container {
-  padding: 1.5rem 0.5rem;
+  padding: 1rem 0.25rem;
   user-select: none;
 }
 
 .troll-amount {
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   font-weight: 900;
   color: #15803d;
   display: inline-block;
@@ -145,19 +142,16 @@
   content: "Ви виграли 10000$!";
 }
 
-.troll-card:hover .troll-amount::before,
-.troll-card:active .troll-amount::before {
-  content: "Ви виграли 1$!";
+.troll-card:is(:hover, :active) .troll-amount {
+  transform: scale(1.08);
 }
 
-.troll-card:hover .troll-amount,
-.troll-card:active .troll-amount {
-  color: #dc2626;
-  transform: scale(1.1);
+.troll-card:is(:hover, :active) .troll-amount::before {
+  content: "Ви виграли 1000$!";
 }
 
 .troll-hint {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #475569;
   font-style: italic;
 }
