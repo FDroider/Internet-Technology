@@ -126,13 +126,11 @@ export function validateBet() {
 }
 
 function updatePayoutAndOddsUI() {
-  const { value, winChance, modeText } = state.selectedMultiplier;
+  const { value, modeText } = state.selectedMultiplier;
   const bet = Math.max(0, Number(DOM.betInput.value) || 0);
   const effective = calculateEffectiveWinChance(bet);
-  const isReduced = effective < winChance;
 
-  DOM.oddsDisplay.textContent = `Шанс: ${Math.round(effective * 1000) / 10}%${isReduced ? ` (знижено від ${Math.round(winChance * 100)}%)` : ''} • ${modeText}`;
-  DOM.oddsDisplay.classList.toggle('odds-reduced', isReduced);
+  DOM.oddsDisplay.textContent = `Шанс: ${Math.round(effective * 1000) / 10}% • ${modeText}`;
   DOM.payoutDisplay.textContent = `Можливий виграш: ${(bet * value).toFixed(2)}$`;
 }
 
