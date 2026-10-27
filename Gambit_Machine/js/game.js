@@ -272,7 +272,7 @@ function handleLoss() {
     toggleEndGameUI(true, '💀 Дитячий мат! Ви програли чиюсь річну зарплату!', 'loss');
     return;
   }
-  const msgIndex = Math.floor(Math.random() * answers.length);
+  const msgIndex = Math.floor(Math.random() * messages.length);
   toggleEndGameUI(true, messages[msgIndex], 'loss');
 }
 
