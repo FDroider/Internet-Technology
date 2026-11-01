@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вивчення арабської мови — jQuery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="brand">
+                <h1>Арабська мова</h1>
+                <p class="subtitle">Контроль засвоєння лексики</p>
+            </div>
+            <button type="button" id="open-dict-btn" class="btn-secondary">
+                Словник-підказка
+            </button>
+        </header>
+
+        <section class="status-panel">
+            <div class="step-box">
+                <span>Крок:</span>
+                <strong><span id="current-step">1</span> / <span id="total-steps">10</span></strong>
+            </div>
+
+            <div class="score-group">
+                <div class="score-badge score-correct">
+                    <span>Вірно:</span>
+                    <strong id="correct-count">0</strong>
+                </div>
+                <div class="score-badge score-wrong">
+                    <span>Невірно:</span>
+                    <strong id="wrong-count">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <div class="progress-track">
+            <div id="progress-bar" class="progress-fill"></div>
+        </div>
+
+        <main class="workspace">
+            <div id="flashcard" class="flashcard" role="button" tabindex="0" title="Натисніть для перевірки перекладу">
+                <span class="card-badge">Арабське слово</span>
+                <div id="arabic-word" class="arabic-text" dir="rtl">...</div>
+                <div id="word-transcription" class="transcription-text">[...]</div>
+                <div id="card-feedback" class="card-feedback"></div>
+                <span class="card-hint">Натисніть на картку, щоб перевірити переклад</span>
+            </div>
+
+            <div class="input-section">
+                <label for="translation-input" class="input-label">Ваш переклад українською:</label>
+                <input 
+                    type="text" 
+                    id="translation-input" 
+                    class="text-input" 
+                    placeholder="Введіть переклад і натисніть на картку..." 
+                    autocomplete="off"
+                >
+                <div id="validation-error" class="error-message"></div>
+            </div>
+        </main>
+    </div>
+
+    <div id="result-modal" class="modal-overlay">
+        <div class="modal-window">
+            <h2 class="modal-title">Результат тестування</h2>
+            <div id="level-badge" class="level-badge">A1</div>
+            <h3 id="level-title" class="level-title">Початковий рівень</h3>
+            <p id="level-desc" class="level-desc"></p>
+
+            <div class="modal-stats">
+                <div class="stat-item stat-correct">
+                    <span>Вірно</span>
+                    <strong id="modal-correct">0</strong>
+                </div>
+                <div class="stat-item stat-wrong">
+                    <span>Невірно</span>
+                    <strong id="modal-wrong">0</strong>
+                </div>
+                <div class="stat-item stat-accuracy">
+                    <span>Точність</span>
+                    <strong id="modal-accuracy">0%</strong>
+                </div>
+            </div>
+
+            <div class="history-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Ваш варіант</th>
+                            <th>Правильно</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body"></tbody>
+                </table>
+            </div>
+
+            <button type="button" id="restart-btn" class="btn-primary">Спробувати ще раз</button>
+        </div>
+    </div>
+
+    <div id="dict-modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-header-row">
+                <h2 class="modal-title">Словник слів</h2>
+                <button type="button" id="close-dict-btn" class="btn-close">&times;</button>
+            </div>
+            <div class="history-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Арабська</th>
+                            <th>Транскрипція</th>
+                            <th>Переклад</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dict-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
