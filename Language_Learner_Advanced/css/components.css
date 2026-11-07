@@ -1,0 +1,210 @@
+.flashcard {
+    background-color: var(--bg-input);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px 20px 32px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.flashcard:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.flashcard:active {
+    transform: translateY(0);
+}
+
+.flashcard.card-correct {
+    border-color: var(--color-success);
+    background-color: var(--color-success-bg);
+}
+
+.flashcard.card-wrong {
+    border-color: var(--color-error);
+    background-color: var(--color-error-bg);
+}
+
+.card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.card-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}
+
+.card-level-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.card-level-tag.level-beginner {
+    color: var(--level-beginner);
+    background-color: var(--level-beginner-bg);
+    border-color: rgba(56, 189, 248, 0.35);
+}
+
+.card-level-tag.level-intermediate {
+    color: var(--level-intermediate);
+    background-color: var(--level-intermediate-bg);
+    border-color: rgba(245, 158, 11, 0.35);
+}
+
+.card-level-tag.level-advanced {
+    color: var(--level-advanced);
+    background-color: var(--level-advanced-bg);
+    border-color: rgba(192, 132, 252, 0.35);
+}
+
+.arabic-text {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.transcription-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.card-feedback {
+    min-height: 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.card-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.text-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-input);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.text-input:focus {
+    border-color: var(--accent-primary);
+}
+
+.text-input.input-error {
+    border-color: var(--color-error);
+}
+
+.error-message {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-primary,
+.btn-secondary {
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    background-color: var(--accent-primary);
+    color: #0f172a;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+
+.btn-secondary {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    background-color: transparent;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+.btn-finish {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 16px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-finish:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+@media (max-width: 480px) {
+    .flashcard {
+        padding: 22px 16px 26px;
+    }
+
+    .card-top-bar {
+        justify-content: center;
+    }
+
+    .arabic-text {
+        font-size: 2.5rem;
+    }
+}
