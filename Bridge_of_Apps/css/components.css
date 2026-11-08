@@ -1,0 +1,175 @@
+.btn-portal-primary {
+    background-color: var(--accent-primary);
+    color: #0f172a;
+    border: none;
+    font-size: 0.92rem;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-portal-primary:hover,
+.btn-portal-primary:focus-visible {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-portal-secondary {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+}
+
+.btn-portal-secondary:hover,
+.btn-portal-secondary:focus-visible {
+    background-color: var(--bg-input);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.access-banner {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.access-banner.banner-success {
+    background-color: var(--color-success-bg);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
+}
+
+.access-banner.banner-error {
+    background-color: var(--color-error-bg);
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+.viewer-switch-btn {
+    background-color: var(--bg-input);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.viewer-switch-btn:hover {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.viewer-switch-btn.active {
+    background-color: var(--accent-glow);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.lab-card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-main);
+    transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.lab-card:hover {
+    transform: translateY(-4px);
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+}
+
+.lab-badge.lab-7 {
+    background-color: var(--lab-7-bg);
+    color: var(--lab-7-color);
+}
+
+.lab-badge.lab-8 {
+    background-color: var(--lab-8-bg);
+    color: var(--lab-8-color);
+}
+
+.lab-badge.lab-9 {
+    background-color: var(--lab-9-bg);
+    color: var(--lab-9-color);
+}
+
+.lab-badge.lab-10 {
+    background-color: var(--lab-10-bg);
+    color: var(--lab-10-color);
+}
+
+.lab-category {
+    color: var(--text-secondary);
+}
+
+.lab-subtitle {
+    color: var(--accent-primary);
+}
+
+.lab-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.tag-item {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+}
+
+.lab-card-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+.modal-window {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    max-width: 680px;
+    box-shadow: var(--shadow-main);
+}
+
+.modal-header-bar {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-close-modal {
+    color: var(--text-secondary);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.btn-close-modal:hover {
+    color: var(--text-primary);
+}
+
+.history-table-wrap {
+    border: 1px solid var(--border-color);
+}
+
+.portal-table {
+    --bs-table-bg: var(--bg-card);
+    --bs-table-border-color: var(--border-color);
+    font-size: 0.88rem;
+}
+
+.portal-table th {
+    background-color: var(--bg-input);
+    color: var(--text-secondary);
+    font-weight: 600;
+}

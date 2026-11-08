@@ -1,0 +1,42 @@
+.portal-wrapper {
+    max-width: 1180px;
+}
+
+.portal-header {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-main);
+}
+
+.brand-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.catalog-section {
+    min-height: 280px;
+}
+
+.lab-viewer-section {
+    display: none;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-main);
+}
+
+.viewer-toolbar {
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.iframe-container {
+    height: 75vh;
+    min-height: 540px;
+    background-color: var(--bg-input);
+}
+
+.portal-footer {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    border-top: 1px solid var(--border-color);
+}
